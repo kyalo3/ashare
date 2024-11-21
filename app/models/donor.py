@@ -15,12 +15,6 @@ class DonorBase(BaseModel):
     email: str
     id_no: str
     phone_number: str
-    gender: str
-    address: str
-    company: str
-    services_interested_in: List[str]
-    participating_locations: List[str]
-    type_of_company: str
 
 
 class DonorCreate(DonorBase):
@@ -51,11 +45,6 @@ def donor_helper(donor: Any) -> dict:
         "first_name": donor["first_name"],
         "last_name": donor["last_name"],
         "email": donor["email"],
-        "company": donor["company"],
-        "registration_number": donor["registration_number"],
-        "services_interested_in": donor["services_interested_in"],
-        "participating_locations": donor["participating_locations"],
-        "type_of_company": donor["type_of_company"],
     }
 
 
