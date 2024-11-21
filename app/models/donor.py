@@ -38,16 +38,16 @@ class Donor(DonorBase):
 
 
 def donor_helper(donor: Any) -> dict:
-    """ helper function to transform donor document to dictionary """
+    """Helper function to transform donor document to dictionary"""
     return {
         "user_id": donor["user_id"],
         "id": str(donor["_id"]),
         "first_name": donor["first_name"],
         "last_name": donor["last_name"],
         "email": donor["email"],
+        "id_no": donor["id_no"],  # Add this line
+        "phone_number": donor["phone_number"]  # Add this line
     }
-
-
 async def create_donor(donor: DonorCreate, user_id: str) -> dict:
     """ function that creates a new donor """
     donor_dict = donor.dict()
