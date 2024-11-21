@@ -13,6 +13,7 @@ class RecipientBase(BaseModel):
     last_name: str
     email: str
     id_no: str
+    id : str
     phone_number: str
     gender: str
     
@@ -40,6 +41,7 @@ def recipient_helper(recipient: Any) -> dict:
         "first_name": recipient["first_name"],
         "last_name": recipient["last_name"],
         "email": recipient["email"],
+        "id": str(recipient["_id"]),  # Ensure id is a string
         "id_no": recipient["id_no"],
         "phone_number": recipient["phone_number"],  # Add this line
         "gender": recipient["gender"],
