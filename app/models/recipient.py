@@ -14,11 +14,6 @@ class RecipientBase(BaseModel):
     email: str
     id_no: str
     phone_number: str
-    gender: str
-    address: str
-    house_hold_size: int
-    house_hold_members: list
-    disability: bool
 
 
 class RecipientCreate(RecipientBase):
@@ -41,17 +36,10 @@ def recipient_helper(recipient: Any) -> dict:
     return {
         "user_id": recipient["user_id"],
         "id": str(recipient["_id"]),
-        "name": recipient["name"],  # Add this line
         "first_name": recipient["first_name"],
         "last_name": recipient["last_name"],
         "email": recipient["email"],
         "id_no": recipient["id_no"],
-        "phone_number": recipient["phone_number"],
-        "gender": recipient["gender"],
-        "address": recipient["address"],
-        "house_hold_size": recipient["house_hold_size"],
-        "house_hold_members": recipient["house_hold_members"],
-        "disability": recipient["disability"]
     }
 
 
