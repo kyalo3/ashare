@@ -14,6 +14,8 @@ class RecipientBase(BaseModel):
     email: str
     id_no: str
     phone_number: str
+    gender: str
+    
 
 
 class RecipientCreate(RecipientBase):
@@ -35,11 +37,12 @@ def recipient_helper(recipient: Any) -> dict:
     """Helper function to transform recipient document to dictionary"""
     return {
         "user_id": recipient["user_id"],
-        "id": str(recipient["_id"]),
         "first_name": recipient["first_name"],
         "last_name": recipient["last_name"],
         "email": recipient["email"],
         "id_no": recipient["id_no"],
+        "phone_number": recipient["phone_number"],  # Add this line
+        "gender": recipient["gender"],
     }
 
 
