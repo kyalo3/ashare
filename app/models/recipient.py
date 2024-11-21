@@ -35,12 +35,22 @@ class Recipient(RecipientBase):
         from_attributes = True
 
 
-def recipient_helper(recipient) -> dict:
-    """Helper function to transform recipient document into dictionary"""
+def recipient_helper(recipient: Any) -> dict:
+    """Helper function to transform recipient document to dictionary"""
     return {
-        "id": str(recipient["_id"]),
-        "name": recipient["name"],
         "user_id": recipient["user_id"],
+        "id": str(recipient["_id"]),
+        "name": recipient["name"],  # Add this line
+        "first_name": recipient["first_name"],
+        "last_name": recipient["last_name"],
+        "email": recipient["email"],
+        "id_no": recipient["id_no"],
+        "phone_number": recipient["phone_number"],
+        "gender": recipient["gender"],
+        "address": recipient["address"],
+        "house_hold_size": recipient["house_hold_size"],
+        "house_hold_members": recipient["house_hold_members"],
+        "disability": recipient["disability"]
     }
 
 
