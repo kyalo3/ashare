@@ -1,3 +1,4 @@
+from typing import Any
 from pydantic import BaseModel
 from bson.objectid import ObjectId
 from app.database import recipient_collection
